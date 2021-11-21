@@ -9,10 +9,10 @@ public class Array {
         this.arr = new int[length];
     }
 
-    public void remoteAt(int index) {
-        // 0(n)
+    public void removeAt(int index) {
+        // O(n)
         // Check if index is in range
-        if (index <= count && index >= 0) {
+        if (index < count && index >= 0) {
             // Move values bigger than index to position + 1
             for (int i = index; i < count; i++) {
                 if (i + 1 < this.arr.length) {
@@ -24,14 +24,14 @@ public class Array {
     }
 
     public void addAt(int index, int val) {
-        // 0(n)
-        if (index <= count && index >= 0) {
+        // O(n)
+        if (index < count && index >= 0) {
             // Create new array with +1 position
             int[] clone = new int[count + 1];
             // Add values to new array as long index > i
             // If i == index add new value
             // if index < i add value to same position
-            for (int i = 0; i < this.arr.length + 1; i++) {
+            for (int i = 0; i < clone.length; i++) {
                 if (i > index) {
                     clone[i] = this.arr[i - 1];
                 } else if (index == i) {
@@ -46,8 +46,8 @@ public class Array {
     }
 
     public int indexOf(int index){
-        // 0(1)
-        if (index <= count && index > 0) {
+        // O(1)
+        if (index < count && index >= 0) {
             return this.arr[index];
         }
         else {
@@ -56,9 +56,9 @@ public class Array {
     }
 
     public void insert(int el) {
+        // O(n)
         // If array doesn't have more space
         if (count == this.arr.length) {
-            // 0(n)
             // Add new array with position + 1 and add all elements.
             // Add new element at end
             int[] clone = new int[count + 1];
@@ -67,12 +67,11 @@ public class Array {
             }
             this.arr = clone;
         }
-        // 0(1)
         this.arr[count++] = el;
     }
 
     public void print() {
-        // 0(n)
+        // O(n)
         for (int x = 0; x < count; x++){
             System.out.println(arr[x]);
         }

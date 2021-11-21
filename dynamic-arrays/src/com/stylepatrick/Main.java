@@ -11,9 +11,9 @@ public class Main {
         arr.insert(50);
         arr.insert(60);
         arr.insert(70);
-        arr.addAt(0, 99);
-        arr.remoteAt(1);
-        System.out.println(arr.indexOf(10));
+        arr.addAt(1, 99);
+        arr.removeAt(6);
+        System.out.println(arr.indexOf(0));
         arr.print();
     }
 }
