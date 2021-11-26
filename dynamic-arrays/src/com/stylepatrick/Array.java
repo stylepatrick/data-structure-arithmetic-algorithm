@@ -16,7 +16,7 @@ public class Array {
             // Move values bigger than index to position + 1
             for (int i = index; i < count; i++) {
                 if (i + 1 < this.arr.length) {
-                    this.arr[i] = this.arr[i+1];
+                    this.arr[i] = this.arr[i + 1];
                 }
             }
             count--;
@@ -35,7 +35,7 @@ public class Array {
                 if (i > index) {
                     clone[i] = this.arr[i - 1];
                 } else if (index == i) {
-                     clone[i] = val;
+                    clone[i] = val;
                 } else {
                     clone[i] = this.arr[i];
                 }
@@ -45,12 +45,11 @@ public class Array {
         }
     }
 
-    public int indexOf(int index){
+    public int indexOf(int index) {
         // O(1)
         if (index < count && index >= 0) {
             return this.arr[index];
-        }
-        else {
+        } else {
             return -1;
         }
     }
@@ -72,7 +71,7 @@ public class Array {
 
     public void print() {
         // O(n)
-        for (int x = 0; x < count; x++){
+        for (int x = 0; x < count; x++) {
             System.out.println(arr[x]);
         }
     }

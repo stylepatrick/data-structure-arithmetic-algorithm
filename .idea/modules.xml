@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/data-structure-arithmetic-algorithm.iml" filepath="$PROJECT_DIR$/.idea/data-structure-arithmetic-algorithm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dynamic-arrays/dynamic-arrays.iml" filepath="$PROJECT_DIR$/dynamic-arrays/dynamic-arrays.iml" />
+      <module fileurl="file://$PROJECT_DIR$/node-trees-depth-sum-level/node-trees-depth-sum-level.iml" filepath="$PROJECT_DIR$/node-trees-depth-sum-level/node-trees-depth-sum-level.iml" />
     </modules>
   </component>
 </project>
