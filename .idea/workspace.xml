@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8eebfde-acaf-4e90-92a1-af1241d90dd3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/stack/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/queue/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/queue/src/MyQueue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +90,7 @@
       <option name="presentableId" value="Default" />
       <updated>1637927025772</updated>
       <workItem from="1637927031721" duration="73000" />
-      <workItem from="1647100879458" duration="340000" />
+      <workItem from="1647100879458" duration="2325000" />
     </task>
     <servers />
   </component>
