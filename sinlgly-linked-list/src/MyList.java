@@ -8,6 +8,9 @@ public class MyList {
         Node p = new Node(val);
         p.next = h;
         head = p;
+        if (h == null) {
+            tail = p;
+        }
     }
 
     void append(int val) {
