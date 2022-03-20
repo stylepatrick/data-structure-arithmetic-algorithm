@@ -1,12 +1,17 @@
 public class List {
 
     Node head;
+    Node tail;
+
 
     void insert(int val) {
         Node p = new Node(val);
         if (head != null) {
             p.next = head;
             head.prev = p;
+        } if (head == null) {
+            tail = p;
+            tail.prev = p;
         }
         head = p;
     }
@@ -27,11 +32,17 @@ public class List {
                     h = h.next;
                 }
                 if (h != null) {
-                    p.next = h.next;
-                    h.next = p;
-                    p.prev = h;
-                    if (p.next != null) {
-                        p.next.prev = p;
+                    if (h == tail) {
+                        tail.next = p;
+                        tail.prev = h;
+                        tail = p;
+                    } else {
+                        p.next = h.next;
+                        h.next = p;
+                        p.prev = h;
+                        if (p.next != null) {
+                            p.next.prev = p;
+                        }
                     }
                 }
             }
@@ -43,12 +54,12 @@ public class List {
         Node p = new Node(val);
         if (h == null) {
             head = p;
+            tail = p;
+            tail.prev = p;
         } else {
-            while (h.next != null) {
-                h = h.next;
-            }
-            h.next = p;
-            p.prev = h;
+            tail.next = p;
+            p.prev = tail;
+            tail = p;
         }
     }
 
@@ -58,8 +69,15 @@ public class List {
             while (h != null && val != h.val) {
                 h = h.next;
             }
-            h.prev.next = h.next;
-            h.next.prev = h.prev;
+            if (h != null) {
+                if (h == tail) {
+                    tail = tail.prev;
+                    tail.next = null;
+                } else {
+                    h.prev.next = h.next;
+                    h.next.prev = h.prev;
+                }
+            }
         }
     }
 
@@ -80,9 +98,14 @@ public class List {
                     h = h.next;
                 }
                 if (h != null) {
-                    h.prev.next = h.next;
-                    if (h.next != null) {
-                        h.next.prev = h.prev;
+                    if (h == tail) {
+                        tail = tail.prev;
+                        tail.next = null;
+                    } else {
+                        h.prev.next = h.next;
+                        if (h.next != null) {
+                            h.next.prev = h.prev;
+                        }
                     }
                 }
             }
