@@ -34,11 +34,13 @@ public class MyList {
             if (h != null) {
                 if (h == head) {
                     head = h.next;
-                } else {
+                } else if (h == tail) {
+                    tail = prev;
+                }
+                else {
                     prev.next = h.next;
                 }
             }
-            
         } else {
             System.out.println("List empty!");
         }
@@ -59,9 +61,14 @@ public class MyList {
             if (h != null) {
                 while (h.next != null) {
                     if (i == position) {
-                        next = h.next;
-                        h.next = p;
-                        p.next = next;
+                        if (h == tail) {
+                            tail.next = p;
+                            tail = p;
+                        } else {
+                            next = h.next;
+                            h.next = p;
+                            p.next = next;
+                        }
                         return;
                     }
                     i++;
@@ -83,7 +90,11 @@ public class MyList {
                 if (i == position - 1) {
                     prev = h;
                 } else if (i == position) {
-                    prev.next = h.next;
+                    if (h == tail) {
+                        tail = prev;
+                    } else {
+                        prev.next = h.next;
+                    }
                     return;
                 }
                 i++;

@@ -37,6 +37,8 @@ public class Main {
 
         myList.delete(0);
 
+        myList.delete(2);
+
         myList.append(3);
 
         System.out.println("-------- Print full List ----------");
