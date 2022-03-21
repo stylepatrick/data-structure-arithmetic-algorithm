@@ -36,8 +36,7 @@ public class MyList {
                     head = h.next;
                 } else if (h == tail) {
                     tail = prev;
-                }
-                else {
+                } else {
                     prev.next = h.next;
                 }
             }

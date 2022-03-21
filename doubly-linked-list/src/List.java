@@ -84,7 +84,6 @@ public class List {
     void deleteAt(int position) {
         Node h = head;
         if (position == 0) {
-            head.next.prev = head.next;
             head = head.next;
             head.prev = null;
         } else {

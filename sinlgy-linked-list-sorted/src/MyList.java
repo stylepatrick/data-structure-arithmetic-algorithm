@@ -13,7 +13,11 @@ public class MyList {
                 prev = h;
                 h = h.next;
             }
-            prev.next = p;
+            if (h == head) {
+                head = h;
+            } else {
+                prev.next = p;
+            }
             p.next = h;
         }
     }

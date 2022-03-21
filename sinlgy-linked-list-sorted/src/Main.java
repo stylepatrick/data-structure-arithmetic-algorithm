@@ -2,8 +2,8 @@ public class Main {
 
     public static void main(String args[]) {
         MyList myList = new MyList();
-        myList.insert(1);
         myList.insert(3);
+        myList.insert(1);
         myList.insert(5);
         myList.insert(4);
         myList.insert(2);
@@ -19,7 +19,7 @@ public class Main {
         System.out.println("---------Print List----------");
         myList.printList();
 
-        myList.deleteAt(0);
+        myList.deleteAt(1);
 
         System.out.println("---------Print List----------");
         myList.printList();
