@@ -27,7 +27,7 @@ public class Library {
             while (h != null && isbn != h.isbn) {
                 h = h.next;
             }
-            if (h != null && isbn == h.isbn) {
+            if (h != null) {
                 return h;
             } else {
                 return null;

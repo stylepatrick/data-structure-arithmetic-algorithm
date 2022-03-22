@@ -11,7 +11,6 @@ public class List {
             head.prev = p;
         } if (head == null) {
             tail = p;
-            tail.prev = p;
         }
         head = p;
     }
@@ -73,7 +72,11 @@ public class List {
                 if (h == tail) {
                     tail = tail.prev;
                     tail.next = null;
-                } else {
+                } else if (h == head) {
+                    head = head.next;
+                    head.prev = null;
+                }
+                else {
                     h.prev.next = h.next;
                     h.next.prev = h.prev;
                 }

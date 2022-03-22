@@ -20,5 +20,9 @@ public class Main {
 
         list.printList();
 
+        list.delete(0);
+
+        list.printList();
+
     }
 }
