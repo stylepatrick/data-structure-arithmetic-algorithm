@@ -1,24 +1,25 @@
-public class SortedList<T extends Comparable<T>> {
+public class SortedList<T extends Node<T>> {
 
     Node<T> head;
     int length;
 
-    void push(Node<T> type) {
+    void push(T type) {
+        Node<T> p = type;
         Node<T> h = head;
         Node<T> prev = null;
         if (h == null) {
-            head = type;
+            head = p;
         } else {
-            while (h != null && type.compareTo((T) h) > 0) {
+            while (h != null && p.compareTo((T) h) > 0) {
                 prev = h;
                 h = h.next;
             }
             if (h == head) {
-                head = type;
+                head = p;
             } else {
-                prev.next = type;
+                prev.next = p;
             }
-            type.next = h;
+            p.next = h;
         }
         length++;
     }
@@ -45,6 +46,16 @@ public class SortedList<T extends Comparable<T>> {
             }
         }
         return null;
+    }
+
+    void print() {
+        Node<T> h = head;
+        if (h != null) {
+            while (h != null) {
+                h.print();
+                h = h.next;
+            }
+        }
     }
 
     int size() {

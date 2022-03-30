@@ -13,4 +13,9 @@ public class Car extends Node<Car> {
         return Integer.compare(this.speed, h.speed);
     }
 
+    @Override
+    public void print() {
+        System.out.println(this.brand + " - " + this.speed);
+    }
+
 }

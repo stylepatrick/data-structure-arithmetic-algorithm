@@ -19,4 +19,9 @@ public class Person extends Node<Person> {
 //            return 1;
 //        }
     }
+
+    @Override
+    public void print() {
+        System.out.println(this.name + " - " + this.age);
+    }
 }

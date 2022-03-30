@@ -4,4 +4,6 @@ public abstract class Node<T> implements Comparable<T> {
 
     public abstract int compareTo(T h);
 
+    public abstract void print();
+
 }
