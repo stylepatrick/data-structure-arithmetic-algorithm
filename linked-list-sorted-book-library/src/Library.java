@@ -21,7 +21,7 @@ public class Library {
         }
     }
 
-    Book find(int isbn) {
+    Book find(int isbn) throws BookNotFoundException, BookLibraryEmpty {
         Book h = head;
         if (h != null) {
             while (h != null && isbn != h.isbn) {
@@ -30,14 +30,14 @@ public class Library {
             if (h != null) {
                 return h;
             } else {
-                return null;
+                throw new BookNotFoundException(isbn);
             }
         } else {
-            return null;
+            throw new BookLibraryEmpty();
         }
     }
 
-    void delete(int isbn) {
+    void delete(int isbn) throws BookLibraryEmpty {
         Book h = head;
         Book prev = null;
         if (h != null) {
@@ -53,11 +53,11 @@ public class Library {
                 }
             }
         } else {
-            System.out.println("Library empty!");
+            throw new BookLibraryEmpty();
         }
     }
 
-    void printLibrary() {
+    void printLibrary() throws BookLibraryEmpty {
         Book h = head;
         if (h != null) {
             while (h != null) {
@@ -65,7 +65,7 @@ public class Library {
                 h = h.next;
             }
         } else {
-            System.out.println("Library empty!");
+            throw new BookLibraryEmpty();
         }
     }
 }
