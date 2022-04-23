@@ -12,15 +12,15 @@ public class Main {
             System.out.println(i);
         }
 
-        // Element is unique, list is sorted with TreeSet.
-        // HashSet could be used too not sorted and not unique.
+        // Element is unique, list is sorted in TreeSet.
+        // HashSet could be used too not sorted and unique.
         TreeSet<String> treeSet = textToTreeSet(text, new TreeSet<>());
 
         for (String i : treeSet) {
             System.out.println(i);
         }
 
-        // Elements are unique in TreeMap and sorted.
+        // Elements are not unique (values can be duplicates, keys not) and sorted in TreeMap.
         // HashMap could be used too not sorted and not unique.
         TreeMap<String, Integer> treeMap = countWords(text);
 
