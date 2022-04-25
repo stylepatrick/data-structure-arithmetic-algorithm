@@ -1,0 +1,1 @@
+This is a line for input to the Application to make tests with file input stream. Test 123
