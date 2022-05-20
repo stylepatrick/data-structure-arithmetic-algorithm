@@ -10,6 +10,9 @@ public class Main {
         // Clone of Stack
         Stack clone = stack.clone();
 
+        clone.push(new Node(3));
+        stack.push(new Node(5));
+
         System.out.println(stack.pop());
         System.out.println(stack.pop());
         System.out.println(stack.pop());

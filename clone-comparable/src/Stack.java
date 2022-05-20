@@ -1,4 +1,4 @@
-public class Stack implements Cloneable {
+public class Stack {
 
     private Node head;
 
@@ -19,13 +19,18 @@ public class Stack implements Cloneable {
         return h;
     }
 
+    // Clone Methode used without calling the super.clone Methode from Object due to deeper references in Stack
     public Stack clone() {
-        try {
-            Stack clone = (Stack) super.clone();
-            return clone;
-        } catch (CloneNotSupportedException e) {
-            throw new RuntimeException(e);
+        Stack clone = new Stack();
+        clone.head = head.clone();
+        Node h = clone.head;
+        Node n = head.next;
+        while (n != null) {
+            h.next = n.clone();
+            h = h.next;
+            n = n.next;
         }
+        return clone;
     }
 
 }
