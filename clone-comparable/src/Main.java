@@ -32,7 +32,7 @@ public class Main {
 
         System.out.println(carTreeSet);
 
-        Comparator<Car> comparator = Comparator.comparingInt(o -> o.size);
+        Comparator<Car> comparator = (o1, o2) -> Integer.compare(o1.size, o2.size);
         List<Car> sortedBySize = new ArrayList<>(carTreeSet.stream().toList());
         sortedBySize.sort(comparator);
 
