@@ -83,5 +83,14 @@ public class Main {
         String s = Stream.concat(allS, allSub).collect(Collectors.joining(","));
         System.out.println(s);
 
+        Stream<MyElement> myElementStream = myElements.stream();
+
+        // build map with key of i
+        Map<Integer, MyElement> map = myElements.stream()
+                .collect(Collectors.toMap(MyElement::getI, e -> e));
+        for (Map.Entry<Integer, MyElement> entry : map.entrySet()) {
+            System.out.println(entry);
+        }
+
     }
 }
